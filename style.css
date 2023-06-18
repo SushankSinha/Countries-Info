@@ -88,3 +88,6 @@ button.btn.btn-primary {
   align-items: center;
   justify-content: center;
 }
+.card-text{
+  word-break: break-all;
+}

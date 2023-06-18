@@ -1,5 +1,9 @@
 
+document.getElementById('main-card-body').style.display = 'none';
+
 function myFunc() {
+
+  document.getElementById('main-card-body').style.display = 'grid';
 
   
 let country = document.getElementById("inputCountry").value;
