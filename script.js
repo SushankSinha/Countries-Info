@@ -1,8 +1,8 @@
 
 document.getElementById('main-card-body').style.display = 'none';
 
- function myFunc() {
-
+async function myFunc() {
+try {
 let country = document.getElementById("inputCountry").value;
 
   const countryName = country.replace(/(^\w{1})|(\s+\w{1})/g, (letter) =>
@@ -19,7 +19,8 @@ let country = document.getElementById("inputCountry").value;
           countryName == obj.cca3.toLowerCase()
         ) {
           document.getElementById('main-card-body').style.display = 'grid';
-          document.getElementById(
+
+           document.getElementById(
             "first"
           ).innerHTML = `${obj.name.common.toUpperCase()}`;
 
@@ -52,5 +53,9 @@ let country = document.getElementById("inputCountry").value;
         }
       });
     });
+} catch (err){
+  alert('error')
 }
+}
+myFunc ();
 
