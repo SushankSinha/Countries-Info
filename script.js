@@ -1,14 +1,7 @@
 
 document.getElementById('main-card-body').style.display = 'none';
 
-// function myFunc() {
-  
-async function myFunc() {
-
-  document.getElementById('main-card-body').style.display = 'grid';
-
-
-  try{
+ function myFunc() {
 
 let country = document.getElementById("inputCountry").value;
 
@@ -16,7 +9,7 @@ let country = document.getElementById("inputCountry").value;
     letter.toLowerCase()
   );
 
-  let promise = await fetch("https://restcountries.com/v3.1/all");
+  let promise = fetch("https://restcountries.com/v3.1/all");
   promise
     .then((data) => data.json())
     .then((country) => {
@@ -25,6 +18,7 @@ let country = document.getElementById("inputCountry").value;
           countryName == obj.name.common.toLowerCase() ||
           countryName == obj.cca3.toLowerCase()
         ) {
+          document.getElementById('main-card-body').style.display = 'grid';
           document.getElementById(
             "first"
           ).innerHTML = `${obj.name.common.toUpperCase()}`;
@@ -58,10 +52,5 @@ let country = document.getElementById("inputCountry").value;
         }
       });
     });
-} catch (err)
-{
-alert("Error!")
 }
-}
-  myFunc();
 
